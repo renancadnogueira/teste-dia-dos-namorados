@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de namoro! Aceita ou Aceita.</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --cor-primaria: #8B80F9;
+            --cor--secundaria: #414141;
+            --cor-primaria-escurecida: #726ace;
+            --cor-branca: #fff;
+            --cor-caixa: rgba(255, 255, 255, 0.5);
+            --cor-sombra-02: rgba(0, 0, 0, 0.2);
+            --cor-sombra-03: rgba(0, 0, 0, 0.3);
+            --cor-sombra-05: rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://source.unsplash.com/1600x900/?romantic,love');
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .conteudo {
+            background-color: var(--cor-caixa);
+            border-radius: 15px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 0px 5px 15px var(--cor-sombra-03);
+        }
+
+        h1 {
+            font-size: 3em;
+            color: var(--cor-branca);
+            margin-bottom: 30px;
+            text-shadow: 0 2px 5px var(--cor-sombra-05);
+        }
+
+        button {
+            background-color: var(--cor-primaria-escurecida);
+            border: none;
+            text-align: center;
+            padding: 15px 32px;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer; 
+            margin: 3px 16px; 
+            border-radius: 25px;
+            color: var(--cor-branca);
+            box-shadow: 0 5px 15px var(--cor-sombra-02);
+            transition: .3s all ease;
+        }
+
+        button:hover {
+            background-color: var(--cor-primaria);
+            transform: translateY(-2px);
+        }
+
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="conteudo">
+        <h1>Você quer namorar comigo?</h1>
+        <div class="caixa_interno"></div>
+        <button onclick="eventoDeClique()">Sim</button>
+        <button id="botao-negativo">Não</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const botaoNegativo = document.querySelector("#botao-negativo");
+            botaoNegativo.addEventListener("mouseover", () => {
+                const x = Math.floor(Math.random() * (window.innerWidth - botaoNegativo.clientWidth));
+                const y = Math.floor(Math.random() * (window.innerHeight - botaoNegativo.clientHeight));
+
+                botaoNegativo.style.position = "absolute";
+                botaoNegativo.style.left = `${x}px`;
+                botaoNegativo.style.top = `${y}px`;
+            })
+        })
+
+        function eventoDeClique() {
+            window.location.href = ""
+        }
+
+
+    </script>
+</body>
+</html>
